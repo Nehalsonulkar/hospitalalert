@@ -28,6 +28,12 @@ def sasl_conf():
     print(sasl_conf)
     return sasl_conf
 
+## sasl.mechanism: Uses the value of SSL_MACHENISM for the SASL mechanism.
+## bootstrap.servers: Uses the value of BOOTSTRAP_SERVER for the Kafka bootstrap server.
+## security.protocol: Uses the value of SECURITY_PROTOCOL for the security protocol.
+## sasl.username: Uses the value of API_KEY for the SASL username.
+## sasl.password: Uses the value of API_SECRET_KEY for the SASL password.
+
 
 
 def schema_config():
@@ -36,6 +42,11 @@ def schema_config():
     'basic.auth.user.info':f"{SCHEMA_REGISTRY_API_KEY}:{SCHEMA_REGISTRY_API_SECRET}"
 
     }
+
+## Purpose: Creates and returns a configuration dictionary for the schema registry.
+## Explanation:
+## url: Uses the value of ENDPOINT_SCHEMA_URL for the schema registry URL.
+## basic.auth.user.info: Uses the values of SCHEMA_REGISTRY_API_KEY and SCHEMA_REGISTRY_API_SECRET for basic authentication information, formatted as username:password.
 
 if __name__ == '__main__':
     sasl_conf()
